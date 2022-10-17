@@ -25,6 +25,10 @@ public class Druide {
 		return forcePotion = effetPotionMin + random.nextInt(effetPotionMax-effetPotionMin) ;
 		
 	}
+	
+	public void booster(int Gaulois, int forcePotion) {
+		
+	}
 
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "  " + texte + " ");
