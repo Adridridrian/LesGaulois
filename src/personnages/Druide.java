@@ -12,7 +12,7 @@ public class Druide {
 		this.nom = nom;
 		this.effetPotionMin = effetPotionMin;
 		this.effetPotionMax = effetPotionMax;
-		parler("Bonjour, je suis le druide " + nom + " et ma potion peut aller d'une force " + effetPotionMin + " Ã  "
+		parler("Bonjour, je suis le druide " + nom + " et ma potion peut aller d'une force " + effetPotionMin + " à "
 				+ effetPotionMax + ".");
 	}
 
@@ -37,7 +37,7 @@ public class Druide {
 
 	private String prendreParole() {
 		return "Le druide " + nom + " : ";
-	}
+}
 	
 	public String toString() {
 		return "Druide [nom=" + nom + ", effetPotionMin=" + effetPotionMin + ", effetPotionMax=" + effetPotionMax + "]";
@@ -48,10 +48,10 @@ public class Druide {
 		System.out.println(panoramix);
 		System.out.println("intervalle [5,10]) : " + preparerPotion(5, 10));
 		if (forcePotion<=7) {
-			System.out.println( "Je n'ai pas trouvÃ© tous les ingrÃ©dients, ma potion est seulement de force" + " " + forcePotion);
+			System.out.println( "Je n'ai pas trouvé tous les ingrédients, ma potion est seulement de force" + " " + forcePotion);
 		}
 		else {
-			System.out.println ( "J'ai prÃ©parÃ© une super potion de force" + " " + forcePotion);
+			System.out.println ( "J'ai préparé une super potion de force" + " " + forcePotion);
 		}
 		
 	}
