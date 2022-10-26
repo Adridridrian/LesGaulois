@@ -20,9 +20,9 @@ public class Druide {
 		return nom;
 	}
 	
-	public static int preparerPotion ( int effetPotionMin , int effetPotionMax) {
+	public void preparerPotion ( int effetPotionMin , int effetPotionMax) {
 		Random random = new Random();
-		return forcePotion = effetPotionMin + random.nextInt(effetPotionMax-effetPotionMin) ;
+		forcePotion = effetPotionMin + random.nextInt(effetPotionMax-effetPotionMin) ;
 		
 	}
 	
@@ -53,6 +53,14 @@ public class Druide {
 		else {
 			System.out.println ( "J'ai préparé une super potion de force" + " " + forcePotion);
 		}
+		
+	}
+
+	public void booster(Gaulois obelix) {
+		// TODO Auto-generated method stub
+		
+	}
+
 		
 	}
 }
