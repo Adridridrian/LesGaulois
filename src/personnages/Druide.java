@@ -12,7 +12,7 @@ public class Druide {
 		this.nom = nom;
 		this.effetPotionMin = effetPotionMin;
 		this.effetPotionMax = effetPotionMax;
-		parler("Bonjour, je suis le druide " + nom + " et ma potion peut aller d'une force " + effetPotionMin + " à "
+		parler("Bonjour, je suis le druide " + nom + " et ma potion peut aller d'une force " + effetPotionMin + " ï¿½ "
 				+ effetPotionMax + ".");
 	}
 
@@ -20,14 +20,21 @@ public class Druide {
 		return nom;
 	}
 	
-	public void preparerPotion ( int effetPotionMin , int effetPotionMax) {
+	public static int preparerPotion ( int effetPotionMin , int effetPotionMax) {
 		Random random = new Random();
 		forcePotion = effetPotionMin + random.nextInt(effetPotionMax-effetPotionMin) ;
+		return forcePotion;
 		
 	}
 	
-	public void booster(int Gaulois, int forcePotion) {
-		
+	public void booster(Gaulois gaulois) {
+		String nomGaulois = gaulois.getNom();
+		if (nomGaulois.equals("ObÃ©lix")) {
+			parler( "Non, ObÃ©lix !... Tu nâ€™auras pas de potion magique !");
+		}
+		else {
+			gaulois.boirePotion(forcePotion);
+		}
 	}
 
 	public void parler(String texte) {
@@ -46,21 +53,16 @@ public class Druide {
 	public static void main(String[] args) {
 		Druide panoramix = new Druide("panoramix", 5, 10);
 		System.out.println(panoramix);
-		System.out.println("intervalle [5,10]) : " + preparerPotion(5, 10));
+		forcePotion= preparerPotion(5, 10);
+		System.out.println("intervalle [5,10] : "+ preparerPotion(5, 10) + " ");
 		if (forcePotion<=7) {
-			System.out.println( "Je n'ai pas trouvé tous les ingrédients, ma potion est seulement de force" + " " + forcePotion);
+			System.out.println( "Je n'ai pas trouvï¿½ tous les ingrï¿½dients, ma potion est seulement de force" + " " + forcePotion);
 		}
 		else {
-			System.out.println ( "J'ai préparé une super potion de force" + " " + forcePotion);
+			System.out.println ( "J'ai prï¿½parï¿½ une super potion de force" + " " + forcePotion);
 		}
 		
 	}
 
-	public void booster(Gaulois obelix) {
-		// TODO Auto-generated method stub
-		
-	}
-
-		
-	}
+	
 }

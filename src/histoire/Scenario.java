@@ -17,6 +17,7 @@ public class Scenario {
 		druide.booster(obelix);
 		obelix.parler("Par Bélénos, ce n'est pas juste !");
 		druide.booster(asterix);
+		asterix.boirePotion(6);
 		asterix.parler("Bonjour");
 		Romain minus = new Romain("Minus", 6);
 		Romain milexcus = new Romain("Milexcus", 8);

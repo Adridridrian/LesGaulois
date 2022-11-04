@@ -19,7 +19,7 @@ public class Gaulois {
 		return nom;
 	}
 	
-	static void boirePotion ( int forcePotion) {
+	public static void boirePotion ( int forcePotion) {
 		effetPotion = forcePotion;
 		
 	}
@@ -63,7 +63,8 @@ public class Gaulois {
 		Gaulois asterix = new Gaulois("asterix", 8);
 		System.out.println(asterix);
 		int forcePotion = 3;
-		asterix.boirePotion (forcePotion);
+		Gaulois.boirePotion (forcePotion);
+		System.out.println("Merci Druide, je sens que ma force est " + forcePotion + " fois décuplée.");
 		
 	}
 
