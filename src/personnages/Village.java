@@ -2,50 +2,50 @@ package personnages;
 
 public class Village {
 	private String nom;
-	private String chef;
-	private static int[] villagois;
-	private static int nbVillagois = 0;
+	private Chef chef;
+	private Gaulois[] villageois;
+	private int nbVillageoisMaximum;
+	private static int nbVillageois = 0;
 	
 	
-	public Village(String nom, String chef, int nbVillagoisMaximum) {
+	public Village(String nom, int nbVillageoisMaximum) {
 		this.nom = nom;
-		this.chef = chef;
-		villagois = new int[nbVillagoisMaximum];
+		this.nbVillageoisMaximum = nbVillageoisMaximum;
+		villageois = new Gaulois[nbVillageoisMaximum];
 	}
 	
-	public static void ajouterHabitant(Gaulois gaulois) {
-		nbVillagois +=1;
-		villagois = new int[1];
+	public void ajouterHabitant(Gaulois gaulois) {
+		villageois[nbVillageois] = gaulois;
+		nbVillageois +=1;
 		
 	}
 	public String getNom() {
 		return nom;
 	}
 	
-	public void setChef(String chef) {
+	public void setChef(Chef chef) {
 		this.chef = chef;
 	}
-	public int trouverHabitant(int numero) {
-		return  villagois[numero];
+	public Gaulois trouverHabitant(int numero) {
+		return  villageois[numero];
 	}
 	
-	public void afficherVillagois() {
-		System.out.println("Dans le village du chef" + chef + " vivent les légendaires gaulois :");
-		int i = 0;
-		while (i<3) {
-			System.out.println(" - "+ villagois[i]);
-			++i;
+	public void afficherVillageois() {
+		System.out.println("Dans le village du chef" + chef.getNom() + " vivent les légendaires gaulois :");
+		for (int i=0;i<nbVillageois;i++) {
+			System.out.println(" - "+ villageois[i].getNom());
 		}
 	}
 	
 	public static void main(String[] args) {
-		Gaulois abracourcix = new Gaulois( "Abracourcix",6);
-		Village village = new Village( " Village des Irréductibles", "Abracourcix", 30);
-		ajouterHabitant(abracourcix);
+		Village village = new Village("Village des Irréductibles", 30);
+		Chef Abracourcix = new Chef("Abracourcix", 6 ,nbVillageois, village);
+		village.setChef(Abracourcix);
 		Gaulois asterix = new Gaulois( "Astérix",8);
-		ajouterHabitant(asterix);
+		village.ajouterHabitant(asterix);
 		Gaulois obelix = new Gaulois( "Obélix",25);
-		ajouterHabitant(obelix);
+		village.ajouterHabitant(obelix);
+		village.afficherVillageois();
 	}
 	
 }

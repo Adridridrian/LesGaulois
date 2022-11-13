@@ -51,13 +51,22 @@ public class Gaulois {
 	}
 	
 	public void faireUneDonnation( Musee musee ) {
-		System.out.println(nom + " Je donne au musee tous mes trophees " + nbTrophee);
+		if (nbTrophees>0){
+			parler( " Je donne au musee tous mes trophees " + nbTrophees);
+			while(nbTrophees>0) {
+				musee.donnerTrophees(this, trophees[nbTrophees]);
+				System.out.println("-"+ trophees[nbTrophees]);
+				trophees[nbTrophees-1]=null;
+				nbTrophees -=1;
+			}
+		}
 	}
 
 	@Override
 	public String toString() {
 		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
 	}
+	
 
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("asterix", 8);
