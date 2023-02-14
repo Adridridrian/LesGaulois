@@ -31,3 +31,5 @@ package personnages;
 		}
 
 	}
+	
+	/*test*/
