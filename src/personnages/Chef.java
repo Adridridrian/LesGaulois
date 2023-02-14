@@ -32,4 +32,4 @@ package personnages;
 
 	}
 	
-	/*test*/
+	/*test2.0*/
